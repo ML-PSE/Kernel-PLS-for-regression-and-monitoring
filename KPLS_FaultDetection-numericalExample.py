@@ -109,9 +109,9 @@ for n_comp in range(1,12):
     K_bar = np.dot(np.dot(M, K), M)
     
     # fit and predict
-    [B, T, U] = KerNIPALS(K_bar, y_train_scaled, n_comp)
-    Y_train_scaled_pred = np.dot(K_bar, B)
-    Y_val_scaled_pred = np.dot(K_t_bar, B)
+    [Bf, T, U] = KerNIPALS(K_bar, y_train_scaled, n_comp)
+    Y_train_scaled_pred = np.dot(K_bar, Bf)
+    Y_val_scaled_pred = np.dot(K_t_bar, Bf)
     
     # errors
     train_mse = mean_squared_error(y_train_scaled, Y_train_scaled_pred)
@@ -156,9 +156,9 @@ K_t_bar = np.dot((K_t - np.dot(Mt, K)), M)
 K_bar = np.dot(np.dot(M, K), M) 
 
 # fit and predict
-[B, T, U] = KerNIPALS(K_bar, y_scaled, n_latents)
-Y_scaled_pred = np.dot(K_bar, B)
-Y_faulty_scaled_pred = np.dot(K_t_bar, B)
+[Bf, T, U] = KerNIPALS(K_bar, y_scaled, n_latents)
+Y_scaled_pred = np.dot(K_bar, Bf)
+Y_faulty_scaled_pred = np.dot(K_t_bar, Bf)
 
 plt.figure()
 plt.plot(y_scaled, Y_scaled_pred, '*')
