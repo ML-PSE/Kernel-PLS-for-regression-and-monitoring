@@ -17,7 +17,7 @@ def KerNIPALS(K, Y, nlatents):
         nlatents  : number of score vectors to extract 
 
     Returns:
-        B      : matrix of dual-form regression coefficients (number of samples x dimY)     
+        Bf     : matrix of dual-form regression coefficients (number of samples x dimY)     
         T,U    : matrix of latent vectors (number of samples x nlatents) 
         
     """
@@ -69,6 +69,6 @@ def KerNIPALS(K, Y, nlatents):
         
     # matrix for regression
     temp = np.linalg.inv(np.dot(T.T, np.dot(K, U)))
-    B =  np.dot(np.dot(np.dot(U, temp), T.T), Y)
+    Bf =  np.dot(np.dot(np.dot(U, temp), T.T), Y)
 
-    return B, T, U
+    return Bf, T, U
