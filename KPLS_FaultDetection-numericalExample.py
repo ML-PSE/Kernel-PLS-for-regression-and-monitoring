@@ -2,6 +2,8 @@
 Application of KPLS for process monitoring.
 Algorithm described in book 'Machine Learning in Python for Process and Equipment Condition Monitoring, and Predictive Maintenance' [https://leanpub.com/ML-Python-for-PM-PdM]
 
+Numerical system adapted from Zhang et al., Nonlinear Multivariate Quality Estimation and Prediction Based on Kernel Partial Least Squares. Ind. Eng. Chem. Res [2008]
+
 @author: Ankur Kumar @ MLforPSE.com
 """
 
