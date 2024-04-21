@@ -52,11 +52,11 @@ K_t_bar = np.dot((K_t - np.dot(Mt, K)), M)
 K_bar = np.dot(np.dot(M, K), M) 
 
 # fit and predict
-[B, T, U] = KerNIPALS(K_bar, Y_center, n_latents)
+[Bf, T, U] = KerNIPALS(K_bar, Y_center, n_latents)
 
 #%% KPLS predictions
-Y_pred = np.dot(K_bar, B) + Y.mean()
-Yt_pred = np.dot(K_t_bar, B) + Y.mean()
+Y_pred = np.dot(K_bar, Bf) + Y.mean()
+Yt_pred = np.dot(K_t_bar, Bf) + Y.mean()
 
 plt.figure()
 plt.plot(X, Y, 'r', label='actual y')
